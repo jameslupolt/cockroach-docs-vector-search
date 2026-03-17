@@ -60,7 +60,7 @@ uv run python index_blog.py
 uv run python index_book.py
 ```
 
-Each indexer is incremental -- re-run anytime to pick up new content. Already-indexed chunks are skipped via content hashing. The Confluence indexer re-indexes all configured pages on each run to pick up edits.
+Each indexer is incremental -- re-run anytime to pick up new content. Already-indexed chunks are skipped via content hashing. T
 
 ### Update the index
 
