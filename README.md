@@ -12,7 +12,6 @@ Local hybrid search (vector + full-text) over CockroachDB documentation, blog po
 | O'Reilly book | ~500 | *CockroachDB: The Definitive Guide*, 2nd edition |
 | Source READMEs | ~440 | Package-level overviews from `cockroach/` repo |
 | Tech notes | ~380 | Internal technical deep-dives from `cockroach/docs/tech-notes/` |
-| Confluence | ~110 | Internal best practices (schema design, query tuning) |
 | **Total** | **~21,700** | **~210 MB database, ~$0.12 total embedding cost** |
 
 ## How it works
