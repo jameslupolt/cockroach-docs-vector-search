@@ -51,11 +51,6 @@ For indexing internal Confluence pages:
 cd docs-vector-search
 export OPENAI_API_KEY="sk-..."
 ```
-
-### Use the pre-built database
-
-A pre-built `docs.db` is available for Hard Rock employees [on SharePoint](https://hardrockdigital-my.sharepoint.com/:u:/p/james_lupolt/IQBJlapU5FPHQ5rmwSp321_CAZdyuSFIRwI3w_qw_F-avpE?e=xFqSLj). Download it into this directory and skip straight to [Usage](#usage).
-
 ### Build the index from scratch
 
 ```bash
