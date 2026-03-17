@@ -62,11 +62,6 @@ uv run python index_blog.py
 
 # Index the O'Reilly book (if you have the PDF)
 uv run python index_book.py
-
-# Index internal Confluence pages
-export CONFLUENCE_USERNAME="you@company.com"
-export CONFLUENCE_API_TOKEN="your-token"
-uv run python index_confluence.py
 ```
 
 Each indexer is incremental -- re-run anytime to pick up new content. Already-indexed chunks are skipped via content hashing. The Confluence indexer re-indexes all configured pages on each run to pick up edits.
