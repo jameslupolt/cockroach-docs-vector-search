@@ -69,7 +69,6 @@ Just re-run the indexers. They'll detect and embed only new/changed content:
 ```bash
 uv run python index_docs.py        # picks up new doc versions, release notes
 uv run python index_blog.py        # picks up new blog posts
-uv run python index_confluence.py  # re-indexes configured Confluence pages
 ```
 
 ## Usage
@@ -127,7 +126,6 @@ docs-vector-search/
   index_docs.py        # Index official docs, _includes, tech notes, RFCs, READMEs
   index_blog.py        # Scrape and index cockroachlabs.com/blog
   index_book.py        # Index the O'Reilly book PDF
-  index_confluence.py  # Index internal Confluence pages by ID
   search_docs.py       # CLI search tool (hybrid vector + FTS with RRF)
   mcp_server.py        # MCP server wrapping search for AI assistants
   docs.db              # SQLite database (not checked in -- build with indexers)
@@ -167,7 +165,6 @@ The approach generalizes to any documentation corpus:
 1. **Swap the source paths** in `index_docs.py` to point at your docs
 2. **Adjust chunking** in `chunk_markdown()` if your docs use different header levels
 3. **Modify blog categories** in `index_blog.py` for your site's structure
-4. **Add Confluence page IDs** to `index_confluence.py` for internal wikis
-5. **Update the MCP tool descriptions** in `mcp_server.py` so AI assistants know what's indexed
+4. **Update the MCP tool descriptions** in `mcp_server.py` so AI assistants know what's indexed
 
 The core search infrastructure (sqlite-vec, FTS5, RRF fusion, source diversity) is source-agnostic.
