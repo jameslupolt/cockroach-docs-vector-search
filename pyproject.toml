@@ -1,0 +1,14 @@
+[project]
+name = "docs-vector-search"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "beautifulsoup4>=4.14.3",
+    "lxml>=6.0.2",
+    "mcp[cli]>=1.26.0",
+    "openai>=2.28.0",
+    "pymupdf>=1.27.2",
+    "sqlite-vec>=0.1.6",
+]
