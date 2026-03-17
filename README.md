@@ -41,9 +41,6 @@ For indexing the docs site:
 For indexing the book:
 - PDF of *CockroachDB: The Definitive Guide* at `../oreilly-cockroachdb-the-definitive-guide.pdf`
 
-For indexing internal Confluence pages:
-- `CONFLUENCE_URL`, `CONFLUENCE_USERNAME`, and `CONFLUENCE_API_TOKEN` environment variables
-
 ## Setup
 
 ```bash
