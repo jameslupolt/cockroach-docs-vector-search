@@ -134,7 +134,7 @@ docs-vector-search/
 
 ## Architecture decisions
 
-**Why sqlite-vec + FTS5 instead of a vector database?**
+**Why sqlite-vec + FTS5 instead of a vector DBMS?**
 
 Single file, no server, no infrastructure. The entire index is a 208 MB SQLite file. Queries take ~1.5 seconds (dominated by the OpenAI embedding API call, not the local search).
 
