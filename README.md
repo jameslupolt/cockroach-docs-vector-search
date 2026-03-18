@@ -135,18 +135,23 @@ docs-vector-search/
 ## Architecture decisions
 
 **Why sqlite-vec + FTS5 instead of a vector database?**
+
 Single file, no server, no infrastructure. The entire index is a 208 MB SQLite file. Queries take ~1.5 seconds (dominated by the OpenAI embedding API call, not the local search).
 
 **Why hybrid search?**
+
 Vector search alone struggles with version-specific queries ("what changed in v25.2") because embeddings don't capture version numbers well. FTS alone misses conceptual matches ("why is my cluster slow" won't match "admission control"). RRF fusion gives you the best of both.
 
 **Why source diversity?**
+
 Without it, release notes (which all contain similar boilerplate) flood the results. Capping results per source type (docs, blog, releases) ensures you see a mix of perspectives for any query.
 
 **Why OpenAI embeddings instead of local?**
+
 `text-embedding-3-small` is cheap ($0.02/M tokens), fast, and high quality. The full index costs ~$0.12 to build. Each query costs ~$0.001. A local model (e.g., via Ollama) would eliminate this cost but is slower and lower quality for technical documentation.
 
 **Why retrieval-only instead of full RAG?**
+
 RAG (Retrieval-Augmented Generation) has two steps: retrieve relevant chunks, then pass them to an LLM to synthesize an answer. This project only does the first step -- it returns raw source chunks with metadata. When used as an MCP tool, the AI assistant you're already talking to *is* the generation step, so adding another LLM layer in the middle would just add latency, cost, and a place where information gets lost or distorted.
 
 This turns out to be better than full RAG for investigative work:
